@@ -18,6 +18,7 @@ Additionally, the configuration files include AWS resources such as Elastic Cont
 
 
 The prerequisites for using the README file and the technologies mentioned are:
+
 **A valid AWS account**
 
 **AWS CLI installed and configured with your AWS credentials**
@@ -26,6 +27,7 @@ The prerequisites for using the README file and the technologies mentioned are:
 
 **kubectl installed**
 
+**docker**
 
 Single command to launch the environment and deploy the application
 ```shell

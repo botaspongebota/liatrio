@@ -23,8 +23,9 @@ update-kubeconfig: push
 
 deploy: update-kubeconfig
 	cat k8s/deploy.yaml | sed "s/ACCT_NUMBER/$(account)/g;s/REGION/$(region)/g;s/REP_NAME/$(rep_name)/g" | kubectl apply -f-
-	sleep 60
-	curl -k https://$(lb_url)
+	sleep 120
+	curl -v http://$(lb_url)
+
 ###Destroy resourses###
 
 destroy-kubernetes-objects:
