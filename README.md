@@ -27,7 +27,15 @@ The prerequisites for using the README file and the technologies mentioned are:
 **kubectl installed**
 
 
+Single command to launch the environment and deploy the application
+```shell
+make deploy
+```
 
+Single command to destroy the environment with all dependancies 
+```shell
+make destroy
+```
 
 This README file provides an overview of the various files in a Terraform configuration that deploys an example application to a Kubernetes cluster on AWS using Docker containers. The file describes the resources created in each file, including the AWS ECR container registry, the EKS cluster on AWS, an EKS node group, and the VPC with public and private subnets, security groups, and gateways. To use this configuration file, you need to have a valid AWS account, the AWS CLI, Terraform, and kubectl installed. You can customize the Terraform and Makefile variables and modify the resources as needed to fit your specific use case.
 
@@ -214,6 +222,7 @@ Note: This code assumes that var.project, var.availability_zones_count, var.vpc_
 
 --------------------
 **Makefile**
+
 This is a Makefile with commands to create and destroy AWS resources, build and push a Docker image, update the kubeconfig file, and deploy the application to a Kubernetes cluster.
 
 The variables used in this Makefile are:
@@ -268,7 +277,9 @@ Deletes the Kubernetes objects created by the deploy command.
 destroy-aws-resources
 ```
 Destroys the AWS resources created by the vpc-eks-init-plan-apply command.
-Note: This Makefile assumes that the AWS CLI and kubectl are installed and configured with the appropriate credentials.
+Note: 
+
+This Makefile assumes that the AWS CLI and kubectl are installed and configured with the appropriate credentials.
 
 
 
